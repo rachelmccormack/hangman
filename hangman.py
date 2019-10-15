@@ -21,6 +21,7 @@ class Hangman:
             print (legs[:4])
         elif self.misses>5:
             print (legs)
+        #Must be more elegant way of doing this- console always outputs None?
 
     def word(self, goal):
         self.wordList = list(goal)
@@ -54,6 +55,7 @@ class Hangman:
 game = Hangman()
 goal = (getpass.getpass("Hello Player, please enter the word to guess"))
 game.word(goal)
+#The getpass is meant to obscure this, but in pycharm it doesnt.may add the option/change to a predefined list from txt
 
 while not game.gameLost and not game.gameWon:
     game.check(str(input("Hello Player 2, please guess a letter")))
